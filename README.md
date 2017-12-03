@@ -3,6 +3,13 @@
 # ngx-inline-edit
 Inline editing for Angular and Material
 
+An input box appears when you click on the text, with confirm/cancel buttons.  
+I use this as an alternative to submitting an entire form. Whereas a single field, when modified, can be sent to persistent storage.  
+Easy peasy!  
+
+Feel free to create PRs and suggest updates.  
+
+See this example - [example use](./src/app/)   
 
 
 ## Example 
