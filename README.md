@@ -37,17 +37,23 @@ Include the module in your project -
 
 Use the directive -  
 
-    <inline-input-edit [label]="'Test Label'" [required]="true" [prefix]="'<b>$</b>&nbsp;'" [changed]="onChange"></inline-input-edit>
+    <inline-input-edit 
+        [label]="'Test Label'" 
+        [required]="true" 
+        [prefix]="'<b>$</b>&nbsp;'" 
+        [changed]="onChange"
+        ([value])="value">
+    </inline-input-edit>
 
 
 
 ![Example](./examples/example.png)  
 
 
-![Editing](./examples/example_editing.png?raw=true)  
+![Editing](./examples/example_editing.png)  
 
 
-![Editing2](./examples/example_editing2.png?raw=true)  
+![Editing2](./examples/example_editing2.png)  
 
 
-![Viewing](./examples/example_viewing.png?raw=true)  
+![Viewing](./examples/example_viewing.png)  
