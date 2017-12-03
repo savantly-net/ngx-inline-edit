@@ -8,7 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  onChange(value) {
-    console.log('changed: ' + value);
+  value = 'example';
+
+  onChange(event, ctrl) {
+    console.log(event);
+    console.log(ctrl);
+    console.log(this.value);
   }
 }
