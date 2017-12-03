@@ -41,10 +41,13 @@ Use the directive -
 
 
 
-[![Example](./examples/example.png?raw=true)]  
+![Example](./examples/example.png)  
 
-[![Editing](./examples/example_editing.png?raw=true)]  
 
-[![Editing2](./examples/example_editing2.png?raw=true)]  
+![Editing](./examples/example_editing.png?raw=true)  
 
-[![Viewing](./examples/example_viewing.png?raw=true)]  
+
+![Editing2](./examples/example_editing2.png?raw=true)  
+
+
+![Viewing](./examples/example_viewing.png?raw=true)  
