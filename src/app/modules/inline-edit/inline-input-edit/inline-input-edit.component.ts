@@ -12,7 +12,14 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 @Component({
   selector: 'inline-input-edit',
   templateUrl: './inline-input-edit.component.html',
-  styleUrls: ['./inline-input-edit.component.css']
+  styleUrls: ['./inline-input-edit.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InlineInputEditComponent),
+      multi: true
+    }
+  ]
 })
 export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
 
@@ -50,9 +57,18 @@ export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
     return this._value;
   }
 
+  set value(v: any) {
+    if (v !== this._value) {
+      this._value = v;
+      this.onChange(v);
+    }
+  }
+
   // ControlValueAccessor interface impl
   writeValue(value: any) {
-    this._value = value;
+    if (value !== undefined) {
+      this._value = value;
+    }
   }
 
   // ControlValueAccessor interface impl
@@ -72,7 +88,7 @@ export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
 
   confirm($event: Event) {
     this.editing = false;
-    this.changed(this.value);
+    this.changed($event, this);
   }
 
   keypress($event) {
@@ -93,12 +109,6 @@ export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
     setTimeout(_ => this.inlineEditControl.nativeElement.focus());
   }
 
-  set value(v: any) {
-    if (v !== this._value) {
-      this._value = v;
-      this.onChange(v);
-    }
-  }
 
   constructor(element: ElementRef, private _renderer: Renderer2) { }
 
@@ -106,9 +116,3 @@ export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
   }
 
 }
-
-const INLINE_EDIT_CONTROL_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => InlineInputEditComponent),
-  multi: true
-};
