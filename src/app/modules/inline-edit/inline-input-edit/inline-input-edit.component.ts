@@ -47,7 +47,7 @@ export class InlineInputEditComponent implements ControlValueAccessor, OnInit {
   /** value prior to editing **/
   private preValue = '';
   /** We are editing **/
-  private editing = false;
+  public editing = false;
   /** Callback when the value is changing **/
   public onChange: any = Function.prototype;
   /** Callback when the input is accessed **/
