@@ -11,6 +11,6 @@ import { MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule } fr
     MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule
   ],
   declarations: [InlineInputEditComponent],
-  exports: [InlineInputEditComponent, FormsModule, MatButtonModule, MatIconModule, MatInputModule, MatFormFieldModule]
+  exports: [InlineInputEditComponent]
 })
 export class InlineEditModule { }
